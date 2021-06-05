@@ -1,0 +1,6 @@
+app/__pycache__/
+app/views/__pycache__/
+app/services/__pycache__/
+.env
+venv/
+.vscode
