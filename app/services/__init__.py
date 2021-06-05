@@ -11,8 +11,7 @@ class Animes:
 
     @staticmethod
     def start_connection() -> Tuple:
-        conn = psycopg2.connect(dbname=env("dbname"), host=env(
-            "host"), password=env("password"), user=env("user"))
+        conn = psycopg2.connect(env("DATABASE_URL"), sslmode='require')
 
         cur = conn.cursor()
 
