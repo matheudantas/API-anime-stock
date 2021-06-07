@@ -4,8 +4,10 @@ from app.services import Animes
 from flask import Blueprint, request
 from psycopg2.errors import UniqueViolation, UndefinedTable
 from http import HTTPStatus
+from flask_cors import CORS
 
 bp_animes = Blueprint('animes', __name__, url_prefix='/api')
+CORS(bp_animes)
 
 
 @bp_animes.route('/animes', methods=['POST', 'GET'])
