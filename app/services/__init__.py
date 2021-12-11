@@ -40,12 +40,9 @@ class Animes:
         self.close_connection(conn, cur)
 
     def missing_fields(self, data: dict) -> list:
-        fieldnames = [f for f in self.FIELDNAMES]
+        fieldnames = list(self.FIELDNAMES)
 
-        invalid_keys = [resp_json for resp_json in data.keys()
-                        if resp_json not in fieldnames]
-
-        return invalid_keys
+        return [resp_json for resp_json in data if resp_json not in fieldnames]
 
     def check_fields(self, data: dict, fields: list):
         received_keys = data.keys()
